@@ -8,7 +8,6 @@ import com.bookify.model.BookCategory;
 import com.bookify.dao.BookCategoryDao;
 
 public class Main {
-
     public static void main(String[] args) {
         // sampleConnection();
         try {
