@@ -1,32 +1,10 @@
 package com.bookify.model;
-/*
--- Create table for storing book categories
-CREATE TABLE tbl_book_category 
-( 
-    category_id VARCHAR2(10) NOT NULL, 
-    category_name VARCHAR2(50) NOT NULL, 
-    category_description VARCHAR2(1000), 
-    category_image VARCHAR2(255),
-CONSTRAINT pk_book_category
-    PRIMARY KEY (category_id),
-CONSTRAINT ck_category_id 
-    CHECK (REGEXP_LIKE(category_id, 'bc[0-9]{5}'))
-)
-/ 
-model package
-1. java bean
-2. has-a relationship
-3. comparable
-4. hashcode
-5. equals
-6. toString
- */
 
 /*  
  * Represents a category of books.
  * TODO: Sets the unique identifier for the category.
  * 
- * @param categoryId The     ID to set. Must match the pattern 'bc[0-9]{5}'.
+ * @param categoryId The ID to set. Must match the pattern 'bc[0-9]{5}'.
  * @throws IllegalArgumentException if the provided category ID is null or does not match the expected pattern.
  */
 

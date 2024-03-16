@@ -11,15 +11,13 @@ public class Customer implements Comparable<Customer> {
     private String customerPhone1;
     private String customerPassword;
 
-    // create a hashmap with if <CustomerAddress.addressType, CustomerAddress> // notGoodPractice? all
+    // create a hashmap with if <CustomerAddress.addressType, CustomerAddress> //
+    // notGoodPractice? all
     /*
-    'Home' -> customerAddress1
-    'Office' -> customerAddress2
-    */
+     * 'Home' -> customerAddress1
+     * 'Office' -> customerAddress2
+     */
     Map<String, CustomerAddress> customerAddresses = new HashMap<>();
-
-    // list of subscription log history of a customer eg. [subscriptionLogHistory1[subscriptionLogId, customer, subscription, subscriptionStartDate, subscriptionEndDate], subscriptionLogHistory2[subscriptionLogId, customer, subscription, subscriptionStartDate, subscriptionEndDate]...]
-    ArrayList<SubscriptionLogHistory> subscriptionLogHistory = new ArrayList<>();
 
     // shoping cart list of books
     ArrayList<CartItem> shopingCart = new ArrayList<>(); // customer.shopingCart.add(new CartItem(book, quantity))
@@ -27,11 +25,19 @@ public class Customer implements Comparable<Customer> {
     // List of all Wishlists
     ArrayList<Wishlist> wishlists = new ArrayList<>();
 
+    // list of subscription log history of a customer eg.
+    // [subscriptionLogHistory1[subscriptionLogId, customer, subscription,
+    // subscriptionStartDate, subscriptionEndDate],
+    // subscriptionLogHistory2[subscriptionLogId, customer, subscription,
+    // subscriptionStartDate, subscriptionEndDate]...]
+    ArrayList<SubscriptionLogHistory> subscriptionLogHistory = new ArrayList<>();
+
     public Customer() {
         super();
     }
 
-    public Customer(String customerId, String customerName, String customerEmail, String customerPhone1, String customerPassword) {
+    public Customer(String customerId, String customerName, String customerEmail, String customerPhone1,
+            String customerPassword) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
@@ -99,22 +105,6 @@ public class Customer implements Comparable<Customer> {
         return this.customerAddresses.get(addressType);
     }
 
-    public ArrayList<SubscriptionLogHistory> getSubscriptionLogHistory() {
-        return subscriptionLogHistory;
-    }
-
-    public void setSubscriptionLogHistory(ArrayList<SubscriptionLogHistory> subscriptionLogHistory) {
-        this.subscriptionLogHistory = subscriptionLogHistory;
-    }
-
-    public void addSubscriptionLogHistory(SubscriptionLogHistory subscriptionLogHistory) {
-        this.subscriptionLogHistory.add(subscriptionLogHistory);
-    }
-
-    public void removeSubscriptionLogHistory(SubscriptionLogHistory subscriptionLogHistory) {
-        this.subscriptionLogHistory.remove(subscriptionLogHistory);
-    }
-
     public ArrayList<CartItem> getShopingCart() {
         return shopingCart;
     }
@@ -139,7 +129,8 @@ public class Customer implements Comparable<Customer> {
     public double getCartTotal() {
         double total = 0;
         for (CartItem cartItem : this.shopingCart) {
-            total += (cartItem.getBook().getBookPrice() * (1 - cartItem.getBook().getBookDiscount())) * cartItem.getQuantity();
+            total += (cartItem.getBook().getBookPrice() * (1 - cartItem.getBook().getBookDiscount()))
+                    * cartItem.getQuantity();
         }
         return total;
     }
@@ -162,6 +153,22 @@ public class Customer implements Comparable<Customer> {
 
     public void clearWishlists() {
         this.wishlists.clear();
+    }
+
+    public ArrayList<SubscriptionLogHistory> getSubscriptionLogHistory() {
+        return subscriptionLogHistory;
+    }
+
+    public void setSubscriptionLogHistory(ArrayList<SubscriptionLogHistory> subscriptionLogHistory) {
+        this.subscriptionLogHistory = subscriptionLogHistory;
+    }
+
+    public void addSubscriptionLogHistory(SubscriptionLogHistory subscriptionLogHistory) {
+        this.subscriptionLogHistory.add(subscriptionLogHistory);
+    }
+
+    public void removeSubscriptionLogHistory(SubscriptionLogHistory subscriptionLogHistory) {
+        this.subscriptionLogHistory.remove(subscriptionLogHistory);
     }
 
     @Override
@@ -188,11 +195,13 @@ public class Customer implements Comparable<Customer> {
 
     @Override
     public String toString() {
-        return "Customer [customerEmail=" + customerEmail + ", customerId=" + customerId + ", customerName=" + customerName
+        return "Customer [customerEmail=" + customerEmail + ", customerId=" + customerId + ", customerName="
+                + customerName
                 + ", customerPassword=" + customerPassword + ", customerPhone1=" + customerPhone1 + "]";
     }
 
-    // FIXME: Implement the compareTo method LIKE return this.stringValue.compareTo(other.stringValue);
+    // FIXME: Implement the compareTo method LIKE return
+    // this.stringValue.compareTo(other.stringValue);
     @Override
     public int compareTo(Customer o) {
         return Integer.parseInt(this.customerId.substring(2)) - Integer.parseInt(o.customerId.substring(2));

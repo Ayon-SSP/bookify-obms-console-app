@@ -14,7 +14,8 @@ public class Main {
             DBConnection dbConnection = DBConnection.getDbConnection();
             BookCategoryDao bookCategoryDao = new BookCategoryDao(dbConnection);
             List<BookCategory> bookCategorys = bookCategoryDao.findAll();
-            bookCategorys.stream().forEach(System.out::println);
+            // bookCategorys.stream().forEach(System.out::println);
+            bookCategorys.stream().forEach(obj -> System.out.println(obj.getCategoryId() + "  " + obj.getCategoryName()));
 
             // now compare any 2 bookCategorys
             // BookCategory BookCategory1 = bookCategorys.get(0);
