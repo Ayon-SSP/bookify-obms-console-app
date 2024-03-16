@@ -115,48 +115,6 @@ public class AdminMenu {
         for (String string : bookFields) {
             System.out.println(string);
         }
-        
-        /*
-    private String bookId;
-    private Author author;
-    private BookCategory category;
-    private List<Genre> genres;
-    private String bookTitle;
-    private String bookDescription;
-    private Date bookPublishDate;
-    private double bookPrice;
-    private boolean discontinued;
-    private int bookPages;
-    private double bookDiscount;
-    private int availableQuantity;
-    private String bookLanguage;
-    private String bookPublisher;
-    private String bookIsbn;
-    private String bookCoverImage;
-
-    public Book() {
-        super();
-    }
-
-    public Book(String bookId, Author author, BookCategory category, List<Genre> genres, String bookTitle, String bookDescription, Date bookPublishDate, double bookPrice, boolean discontinued, int bookPages, double bookDiscount, int availableQuantity, String bookLanguage, String bookPublisher, String bookIsbn, String bookCoverImage) {
-        this.bookId = bookId;
-        this.author = author;
-        this.category = category;
-        this.genres = genres;
-        this.bookTitle = bookTitle;
-        this.bookDescription = bookDescription;
-        this.bookPublishDate = bookPublishDate;
-        this.bookPrice = bookPrice;
-        this.discontinued = discontinued;
-        this.bookPages = bookPages;
-        this.bookDiscount = bookDiscount;
-        this.availableQuantity = availableQuantity;
-        this.bookLanguage = bookLanguage;
-        this.bookPublisher = bookPublisher;
-        this.bookIsbn = bookIsbn;
-        this.bookCoverImage = bookCoverImage;
-    }
-         */
 
         Book book = new Book(bookFields[0], 
             bookStore.getAuthor(bookFields[1]), 
