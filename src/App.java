@@ -1,12 +1,12 @@
 import com.bookify.demo.AdminMenu;
+import com.bookify.demo.CustomerMenu;
 
 public class App {
     public static void main(String[] args) {
         AdminMenu adminMenu = AdminMenu.getInstance();
+        CustomerMenu customerMenu = CustomerMenu.getInstance();
 
-        while(true){
-            adminMenu.displayAdminMenu();
-            adminMenu.performAdminMenu();
-        }
+        adminMenu.performAdminMenu();
+        customerMenu.performCustomerMenu();
     }   
 }

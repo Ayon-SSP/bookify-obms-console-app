@@ -38,41 +38,45 @@ public class AdminMenu {
         System.out.println("9. Exit");
     }
 
+    // BookStore bookStore = BookStore.getInstance();
     public void performAdminMenu() {
-        BookStore bookStore = BookStore.getInstance();
-        int choice = sc.nextInt();
-        sc.nextLine();
-
-        switch(choice){
-            case 1:
-                createCategory();
-                break;
-            case 2:
-                createGenre();
-                break;
-            case 3:
+        boolean flag = true;
+        while(flag){
+            this.displayAdminMenu();
+            int choice = sc.nextInt();
+            sc.nextLine();
+            
+            switch(choice){
+                case 1:
+                    createCategory();
+                    break;
+                case 2:
+                    createGenre();
+                    break;
+                case 3:
                 createAuthor();
                 break;
-            case 4:
-                createBook();
-                break;
-            case 5:
-                bookStore.displayBookCategories();
-                break;
-            case 6:
-                bookStore.displayGenres();
-                break;
-            case 7:
-                bookStore.displayAuthors();
-                break;
-            case 8:
-                bookStore.displayBooks();
-                break;
-            case 9:
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Invalid choice");
+                case 4:
+                    createBook();
+                    break;
+                case 5:
+                    bookStore.displayBookCategories();
+                    break;
+                case 6:
+                    bookStore.displayGenres();
+                    break;
+                case 7:
+                    bookStore.displayAuthors();
+                    break;
+                case 8:
+                    bookStore.displayBooks();
+                    break;
+                case 9:
+                    flag = false;
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+            }
         }
     }
 
