@@ -2,13 +2,13 @@ package com.bookify.model;
 
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public class Book implements Comparable<Book> {
     private String bookId;
     private Author author;
     private BookCategory category;
-    private List<Genre> genres;
+    private Set<Genre> genres;
     private String bookTitle;
     private String bookDescription;
     private Date bookPublishDate;
@@ -26,7 +26,7 @@ public class Book implements Comparable<Book> {
         super();
     }
 
-    public Book(String bookId, Author author, BookCategory category, List<Genre> genres, String bookTitle, String bookDescription, Date bookPublishDate, double bookPrice, boolean discontinued, int bookPages, double bookDiscount, int availableQuantity, String bookLanguage, String bookPublisher, String bookIsbn, String bookCoverImage) {
+    public Book(String bookId, Author author, BookCategory category, Set<Genre> genres, String bookTitle, String bookDescription, Date bookPublishDate, double bookPrice, boolean discontinued, int bookPages, double bookDiscount, int availableQuantity, String bookLanguage, String bookPublisher, String bookIsbn, String bookCoverImage) {
         this.bookId = bookId;
         this.author = author;
         this.category = category;
@@ -72,11 +72,11 @@ public class Book implements Comparable<Book> {
         this.category = category;
     }
 
-    public List<Genre> getGenres() {
+    public Set<Genre> getGenres() {
         return genres;
     }
 
-    public void setGenres(List<Genre> genres) {
+    public void setGenres(Set<Genre> genres) {
         this.genres = genres;
     }
 
