@@ -80,6 +80,14 @@ public class Book implements Comparable<Book> {
         this.genres = genres;
     }
 
+    public void addGenre(Genre genre) {
+        this.genres.add(genre);
+    }
+
+    public void removeGenre(Genre genre) {
+        this.genres.remove(genre);
+    }
+
     public String getBookTitle() {
         return bookTitle;
     }
