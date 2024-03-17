@@ -38,6 +38,9 @@ public class CustomerDB {
     }
 
     public void displayCartItems() {
+        if (cartItems.isEmpty()) {
+            System.out.println("Cart is empty!");
+        }
         for (Book book : cartItems) {
             System.out.println(book.getBookId() + " -> " +book);
         }

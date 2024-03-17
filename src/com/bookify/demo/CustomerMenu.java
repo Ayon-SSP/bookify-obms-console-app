@@ -44,7 +44,11 @@ public class CustomerMenu {
                 case 2:
                     System.out.println("Enter book id: ");
                     String bookId = sc.nextLine();
-                    customerDB.addCartItem(BookStore.getInstance().getBook(bookId));
+                    if (BookStore.getInstance().getBook(bookId) == null) {
+                        System.out.println("Invalid book id");
+                    } else {
+                        customerDB.addCartItem(BookStore.getInstance().getBook(bookId));
+                    }
                     break;
                 case 3:
                     System.out.println("Enter book id: ");

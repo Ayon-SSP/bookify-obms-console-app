@@ -1,8 +1,9 @@
 package com.bookify.demo;
 
 import java.sql.Date;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 import com.bookify.model.Author;
 import com.bookify.model.Book;
@@ -111,7 +112,7 @@ public class AdminMenu {
         System.out.println("Enter book id, author id, category id, genre id's, description, price, discount, available quantity: "); 
         String[] bookFields = sc.nextLine().split(", "); // ip: b00001, au00001, bc00001, ge00001 ge00002 ge00003, Harry Potter and the Philosopher's Stone, Harry Potter and the Philosopher's Stone, 1299, 0.05, 200
         // // ge00001 ge00002 ge00003 -> [objects...]
-        ArrayList<Genre> genres = new ArrayList<>();
+        Set<Genre> genres = new HashSet<>();
         for(String genreId : bookFields[3].split(" ")){
             genres.add(bookStore.getGenre(genreId));
         }

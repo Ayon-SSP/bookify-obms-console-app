@@ -2,6 +2,8 @@ package com.bookify.demo;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.bookify.model.Author;
 import com.bookify.model.Book;
@@ -128,7 +130,7 @@ public class BookStore {
                 "31 July 1965");
         bookStore.addAuthor(author);
 
-        ArrayList<Genre> genres = new ArrayList<>();
+        Set<Genre> genres = new HashSet<>();
         genres.add(genre);
         genres.add(genre2);
         genres.add(genre3);
