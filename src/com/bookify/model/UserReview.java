@@ -3,8 +3,8 @@ package com.bookify.model;
 import java.sql.Date;
 
 public class UserReview implements Comparable<UserReview> {
-    private Book book;
-    private Customer customer;
+    private String bookId;
+    private String customerId;
     private double bookRating;
     private String bookReview;
     private Date reviewDate;
@@ -13,28 +13,28 @@ public class UserReview implements Comparable<UserReview> {
         super();
     }
 
-    public UserReview(Book book, Customer customer, double bookRating, String bookReview, Date reviewDate) {
-        this.book = book;
-        this.customer = customer;
+    public UserReview(String bookId, String customerId, double bookRating, String bookReview, Date reviewDate) {
+        this.bookId = bookId;
+        this.customerId = customerId;
         this.bookRating = bookRating;
         this.bookReview = bookReview;
         this.reviewDate = reviewDate;
     }
 
-    public Book getBook() {
-        return book;
+    public String getBook() {
+        return bookId;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
+    public void setBook(String bookId) {
+        this.bookId = bookId;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public String getCustomer() {
+        return customerId;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomer(String customerId) {
+        this.customerId = customerId;
     }
 
     public double getBookRating() {
@@ -65,8 +65,8 @@ public class UserReview implements Comparable<UserReview> {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((book == null) ? 0 : book.hashCode());
-        result = prime * result + ((customer == null) ? 0 : customer.hashCode());
+        result = prime * result + ((bookId == null) ? 0 : bookId.hashCode());
+        result = prime * result + ((customerId == null) ? 0 : customerId.hashCode());
         return result;
     }
 
@@ -79,21 +79,21 @@ public class UserReview implements Comparable<UserReview> {
         if (getClass() != obj.getClass())
             return false;
         UserReview other = (UserReview) obj;
-        if (book != other.book)
+        if (bookId != other.bookId)
             return false;
-        if (customer != other.customer)
+        if (customerId != other.customerId)
             return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return "UserReview [book=" + book + ", bookRating=" + bookRating + ", bookReview=" + bookReview + ", customer=" + customer
+        return "UserReview [bookId=" + bookId + ", bookRating=" + bookRating + ", bookReview=" + bookReview + ", customerId=" + customerId
                 + ", reviewDate=" + reviewDate + "]";
     }
 
     @Override
     public int compareTo(UserReview o) {
-        return Integer.parseInt(this.book.getBookId().substring(2)) - Integer.parseInt(o.book.getBookId().substring(2));
+        return Integer.parseInt(this.bookId.substring(2)) - Integer.parseInt(o.bookId.substring(2));
     }
 }

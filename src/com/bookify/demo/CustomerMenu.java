@@ -60,6 +60,7 @@ public class CustomerMenu {
                     break;
                 case 5:
                     System.out.println("<---- Order Placed Successfully! ---->");
+                    customerDB.clearCartItems();
                     break;
                 case 6:
                     System.exit(0);
