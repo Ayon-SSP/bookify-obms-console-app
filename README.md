@@ -22,6 +22,7 @@
   - BookCategory.java
   - Genre.java
   - Author.java
+  - UserReview.class -> ArrayList<UserReview>
 - tbl_customer -> Customer.java
   - CustomerAddress.java
   - ShoppingCart -> CartItem.java
